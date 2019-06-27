@@ -339,6 +339,13 @@ class RespeakerNode(object):
             self.speech_prefetch_buffer += data
             self.speech_prefetch_buffer = self.speech_prefetch_buffer[-self.speech_prefetch_bytes:]
 
+    # 追加
+    def change_angle(self, angle):
+        angle = int(angle) # Str型をInt型に変換
+        if angle > 0:
+            return 360 - angle
+        return -(angle)
+
     def on_timer(self, event):
         stamp = event.current_real or rospy.Time.now()
         is_voice = self.respeaker.is_voice()
