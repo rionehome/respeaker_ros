@@ -1,6 +1,31 @@
 respeaker_ros
 =============
 
+## ここから追加
+## Overview
+-180度から180度の角度を返すところを、半時計回りに0度から360度の角度を返すように変更
+
+## Usage
+
+```
+roslaunch respeaker_ros respeaker.launch
+```
+
+※確認するとき
+```
+rostopic echo /sound_direction
+```
+
+## Node
+**`name` respeaker_node**
+
+### Publish Topic
+
+* **`sound_direction`** 角度を送る ( std_msgs/Int32 )
+
+
+## ここまで追加
+
 A ROS Package for Respeaker Mic Array
 
 
