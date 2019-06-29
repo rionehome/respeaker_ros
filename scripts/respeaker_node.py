@@ -387,7 +387,6 @@ class RespeakerNode(object):
 		self.pub_vad.publish(Bool(data=is_voice))
 
 		# doa
-		print self.change_angle(doa)
 		self.pub_doa_raw.publish(Int32(data=self.change_angle(doa)))
 
 		msg = PoseStamped()
